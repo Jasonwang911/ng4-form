@@ -1,6 +1,9 @@
-<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
-  <div>用户名：<input type="text" ngModel name="username"></div>
-  <div>手机号：<input type="number" ngModel name="mobile"></div>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)">
+  <div>用户名：<input required minlength="6"  type="text" ngModel name="username" (input)="onUsernameInput(myForm)"></div>
+  <div [hidden]="mobileValid || mobileUntouched">
+    <div [hidden]="!myForm.form.hasError('required', 'username')">用户名是必填项</div>
+  </div>
+  <div>手机号：<input mobile type="number" ngModel name="mobile"></div>
   <div ngModelGroup="passwordsGroup">
     <div>密码：<input type="password" ngModel name="password" type="password"></div>
     <div>确认密码：<input type="password" ngModel name="pconfirm"></div>

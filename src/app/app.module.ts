@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveRegistComponent } from './reactive-regist/reactive-regist.component';
+import { MobileValidatorDirective } from './directives/mobile-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
-    ReactiveRegistComponent
+    ReactiveRegistComponent,
+    MobileValidatorDirective
   ],
   imports: [
     BrowserModule,
